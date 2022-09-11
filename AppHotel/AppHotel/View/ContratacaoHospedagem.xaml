@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHotel.View.ContratacaoHospedagem"
+             BackgroundColor="#f0f0f0">
+    <ContentPage.Content>
+
+        <StackLayout>
+            <!-- Cabeçalho -->
+            <Frame Style="{StaticResource FrameHeader}"
+                   HeightRequest="32">
+
+                <Grid>
+                    <Label Style="{StaticResource Titulo}"
+                           FontSize="28"
+                           TextColor="#fff"
+                           HorizontalOptions="Start"
+                           VerticalTextAlignment="Center"
+                           Grid.Row="0"
+                           Grid.Column="0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="olá, "/>
+                                <Span x:Name="span_usuario" BindingContext="{Binding Nome}"/>
+                                <Span Text="."/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Button Grid.Column="1" Style="{StaticResource OnlyTextButton}" Clicked="Button_Clicked_1"
+                            Text="sair" FontSize="28"
+                            HorizontalOptions="End"
+                            WidthRequest="50"/>
+
+                </Grid>
+            </Frame>
+            <!--Fim do Cabeçalho-->
+
+            <Frame Style="{StaticResource FrameStepper}">
+                <StackLayout>
+                    <Grid ColumnDefinitions="2*, *, *" RowDefinitions="*, *">
+                        <Label Style="{StaticResource Titulo}"
+                                    FontSize="28"
+                                    Grid.Row="0" Grid.Column="0"
+                                    VerticalTextAlignment="Center"
+                                    TextColor="#111"
+                                    HorizontalTextAlignment="Start">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="adultos: "/>
+                                    <Span x:Name="span_qnt_adultos" Text="0"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Button Style="{StaticResource ButtonStepper}" Grid.Row="0" Grid.Column="1" Text="+"
+                                Clicked="AdicionarAdultos"/>
+                        <Button Style="{StaticResource ButtonStepper}" Grid.Row="0" Grid.Column="2" Text="-"
+                                Clicked="RemoverAdultos"/>
+
+                        <Label Style="{StaticResource Titulo}"
+                                    FontSize="28"
+                                    Grid.Row="1" Grid.Column="0"
+                                    VerticalTextAlignment="Center"
+                                    TextColor="#111"
+                                    HorizontalTextAlignment="Start">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="crianças: "/>
+                                    <Span x:Name="span_qnt_criancas" Text="0"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+
+                        <Button Style="{StaticResource ButtonStepper}" Grid.Row="1" Grid.Column="1" Text="+"
+                                Clicked="AdicionarCriancas"/>
+                        <Button Style="{StaticResource ButtonStepper}" Grid.Row="1" Grid.Column="2" Text="-"
+                                Clicked="RemoverCriancas"/>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
+            <Frame Margin="0, 10, 0, 0">
+                <StackLayout>
+                    <Label Style="{StaticResource Titulo}"
+                       Text="Suíte"
+                       TextColor="#5639D5"/>
+                    <StackLayout>
+                        <Grid>
+                            <Label Style="{StaticResource Texto}"
+                                    Text="Selecione a sua acomodação"
+                                    TextColor="#111"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    VerticalTextAlignment="Center"
+                                   x:Name="lbl_acomodacao"/>
+                            <Picker x:Name="pck_suite"
+                                    ItemDisplayBinding="{Binding Nome}"
+                                    Title="Selecione a sua acomodação"
+                                    TitleColor="Transparent"
+                                    TextColor="Transparent"
+                                    SelectedIndexChanged="pck_suite_SelectedIndexChanged"/>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+            <Frame Margin="0, 10, 0, 0">
+                <StackLayout>
+                    <Label Style="{StaticResource Titulo}"
+                       Text="Estadia"
+                       TextColor="#5639D5"/>
+                    
+                    <StackLayout Orientation="Horizontal">
+                        <Label TextColor="#111"
+                               Style="{StaticResource Texto}" Text="Check-in:"
+                               VerticalTextAlignment="Center"/>
+                        
+                        <DatePicker Style="{StaticResource EstadiaDatePicker}" x:Name="dtpck_checkin"
+                                            DateSelected="dtpck_checkin_DateSelected"
+                                            Format="dd/MM/yyyy" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label TextColor="#111"
+                               Style="{StaticResource Texto}" Text="Check-out:"
+                               VerticalTextAlignment="Center"/>
+                        
+                        <DatePicker Style="{StaticResource EstadiaDatePicker}" x:Name="dtpck_checkout"                                            
+                                            Format="dd/MM/yyyy"/>
+                    </StackLayout>
+                    
+                </StackLayout>
+            </Frame>
+
+            <Button Style="{StaticResource CommonButton}"
+                    Text="Calcular Hospedagem"
+                    Clicked="Button_Clicked"
+                    WidthRequest="250"
+                    HeightRequest="75"
+                    VerticalOptions="Center"
+                    Margin="0, 15, 0, 0"/>
+            <!--
+                    <Picker x:Name="pck_suite"
+                            ItemDisplayBinding="{Binding Nome}"
+                            Title="Selecione sua Acomodação"/>
+
+                    <Frame BackgroundColor="#ddd"
+                           CornerRadius="10" Margin="10">
+                        <StackLayout>
+                            <Label Text="Período da Estadia" />
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Check-in:" />
+                                <DatePicker x:Name="dtpck_checkin"
+                                            DateSelected="dtpck_checkin_DateSelected"
+                                            Format="dd/MM/yyyy" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Check-out:" />
+                                <DatePicker x:Name="dtpck_checkout"                                            
+                                            Format="dd/MM/yyyy" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                    
+                    <Button Text="Calcular Hospedagem" Clicked="Button_Clicked" />
+            -->
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

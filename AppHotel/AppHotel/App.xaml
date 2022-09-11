@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHotel.App">
+    <Application.Resources>
+        <Style TargetType="Label" x:Key="Titulo">
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="TextTransform" Value="None"/>
+            <Setter Property="FontSize" Value="56"/>
+            <Setter Property="FontFamily" Value="Ubuntu Medium"/>
+        </Style>
+
+        <Style TargetType="Label" x:Key="Texto">
+            <Setter Property="TextTransform" Value="None"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontFamily" Value="Ubuntu Regular"/>
+        </Style>
+
+        <Style TargetType="Button" x:Key="GradientButton">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0, 0"  EndPoint="1, 1">
+                        <GradientStop Color="#5639D5" Offset="0"/>
+                        <GradientStop Color="#A122E1" Offset="1.1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="FontFamily" Value="Ubuntu Medium"/>
+            <Setter Property="TextColor" Value="#eee"/>
+            <Setter Property="CornerRadius" Value="50"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+
+        <Style TargetType="Button" x:Key="OnlyTextButton">
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="FontFamily" Value="Ubuntu Medium"/>
+            <Setter Property="TextColor" Value="#eee"/>
+            <Setter Property="TextTransform" Value="None"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+
+        <Style TargetType="Button" x:Key="ButtonStepper">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0, 0"  EndPoint="1, 1">
+                        <GradientStop Color="#5639D5" Offset="0"/>
+                        <GradientStop Color="#5639FF" Offset="1.1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="FontFamily" Value="Ubuntu Medium"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+
+        <Style TargetType="Button" x:Key="CommonButton">
+            <Setter Property="BackgroundColor" Value="#5639D5"/>
+            <Setter Property="FontFamily" Value="Ubuntu Medium"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+
+        <Style TargetType="Entry" x:Key="LoginEntry">
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="FontFamily" Value="Ubuntu Regular"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="TextColor" Value="#111"/>
+        </Style>
+
+        <Style TargetType="Frame" x:Key="LoginFrameEntry">
+            <Setter Property="BackgroundColor" Value="#ffffff"/>
+            <Setter Property="CornerRadius" Value="50"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+
+        <Style TargetType="StackLayout" x:Key="FormLogin">
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            <Setter Property="Margin" Value="0, 0, 0, 30"/>
+        </Style>
+
+        <Style TargetType="Frame" x:Key="FrameHeader">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0, 0"  EndPoint="1, 1">
+                        <GradientStop Color="#5639D5" Offset="0"/>
+                        <GradientStop Color="#A122E1" Offset="1.1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Frame" x:Key="FrameStepper">
+            <Setter Property="BackgroundColor" Value="#fff"/>
+        </Style>
+
+        <Style TargetType="DatePicker" x:Key="EstadiaDatePicker">
+            <Setter Property="FontFamily" Value="Ubuntu Medium"/>
+            <Setter Property="TextColor" Value="#5639D5"/>
+        </Style>
+    </Application.Resources>
+</Application>

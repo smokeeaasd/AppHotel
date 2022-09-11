@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHotel.View.Login" BackgroundColor="#f0f0f0">
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource FormLogin}">
+            <Label Style="{StaticResource Titulo}"
+                Text="Log In"
+                Margin="0, 0, 0, 25"
+                TextColor="#5639D5"/>
+
+            <Frame Style="{StaticResource LoginFrameEntry}"
+                    Margin="0, 0, 0, 5">
+                <Entry x:Name="txt_usuario"
+                    Style="{StaticResource LoginEntry}"
+                    PlaceholderColor="#9f9f9f"
+                    Placeholder="usuário"
+                    WidthRequest="250"/>
+            </Frame>
+
+            <Frame Style="{StaticResource LoginFrameEntry}"
+                    Margin="0, 5, 0, 5">
+                <Entry x:Name="txt_senha"
+                    Style="{StaticResource LoginEntry}"
+                    PlaceholderColor="#9f9f9f"
+                    Placeholder="senha"
+                    IsPassword="True"
+                    WidthRequest="250"/>
+            </Frame>
+
+            <Grid ColumnDefinitions="30, 220" HorizontalOptions="Center">
+                <CheckBox x:Name="check_manter_conectado" HorizontalOptions="Center"
+                          Color="#5639D5"/>
+                
+                <Label Style="{StaticResource Texto}"
+                       Text="quero me manter conectado(a)."
+                       TextColor="#222222"
+                       VerticalOptions="Center"
+                       FontSize="14"
+                       FontFamily="Ubuntu Medium"
+                       Grid.Column="1"/>
+            </Grid>
+
+            <Button x:Name="btnEntrar" Clicked="btnEntrar_Clicked"
+                Margin="0, 5, 0, 25"
+                Style="{StaticResource GradientButton}"
+                WidthRequest="250"
+                HeightRequest="50"
+                Text="Entrar"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

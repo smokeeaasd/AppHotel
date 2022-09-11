@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHotel.View.HospedagemCalculada"
+             BackgroundColor="#f0f0f0"
+             Padding="10">
+
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <Label Text="Detalhes" Style="{StaticResource Titulo}" TextColor="#5639D5"/>
+
+            <Frame CornerRadius="20">
+                <StackLayout>
+                    <Label Style="{StaticResource Titulo}"
+                        FontSize="32"
+                        HorizontalOptions="Start"
+                        TextColor="#5639D5"
+                        Text="Tipo de Suíte"/>
+                    <Label Style="{StaticResource Texto}"
+                        FontSize="24"
+                        HorizontalOptions="Start"
+                        TextColor="#111"
+                        Text="{Binding Path=QuartoEscolhido.Nome}"
+                           Margin="10, 0, 0, 0"/>
+
+                    <Line BackgroundColor="#ddd" WidthRequest="275" HeightRequest="1" HorizontalOptions="Center"/>
+
+                    <Label Style="{StaticResource Titulo}"
+                        FontSize="32"
+                        HorizontalOptions="Start"
+                        TextColor="#5639D5"
+                        Text="Adultos"/>
+                    <Label Style="{StaticResource Texto}"
+                        FontSize="24"
+                        HorizontalOptions="Start"
+                        TextColor="#111"
+                        Text="{Binding QntAdultos}"
+                           Margin="10, 0, 0, 0"/>
+
+                    <Line BackgroundColor="#ddd" WidthRequest="275" HeightRequest="1" HorizontalOptions="Center"/>
+
+                    <Label Style="{StaticResource Titulo}"
+                        FontSize="32"
+                        HorizontalOptions="Start"
+                        TextColor="#5639D5"
+                        Text="Crianças"/>
+                    <Label Style="{StaticResource Texto}"
+                        FontSize="24"
+                        HorizontalOptions="Start"
+                        TextColor="#111"
+                        Text="{Binding QntCriancas}"
+                           Margin="10, 0, 0, 0"/>
+
+                    <Line BackgroundColor="#ddd" WidthRequest="275" HeightRequest="1" HorizontalOptions="Center"/>
+
+                    <Label Style="{StaticResource Titulo}"
+                        FontSize="32"
+                        HorizontalOptions="Start"
+                        TextColor="#5639D5"
+                        Text="Data de Check-In"/>
+                    <Label Style="{StaticResource Texto}"
+                        FontSize="24"
+                        HorizontalOptions="Start"
+                        TextColor="#111"
+                        Text="{Binding DataCheckIn, StringFormat='{}{0:dd/MM/yyyy}'}"
+                           Margin="10, 0, 0, 0"/>
+
+                    <Line BackgroundColor="#ddd" WidthRequest="275" HeightRequest="1" HorizontalOptions="Center"/>
+
+                    <Label Style="{StaticResource Titulo}"
+                        FontSize="32"
+                        HorizontalOptions="Start"
+                        TextColor="#5639D5"
+                        Text="Data de Check-Out"/>
+                    <Label Style="{StaticResource Texto}"
+                        FontSize="24"
+                        HorizontalOptions="Start"
+                        TextColor="#111"
+                        Text="{Binding DataCheckOut, StringFormat='{}{0:dd/MM/yyyy}'}"
+                           Margin="10, 0, 0, 0"/>
+
+                    <Line BackgroundColor="#ddd" WidthRequest="275" HeightRequest="1" HorizontalOptions="Center"/>
+
+                    <Label Style="{StaticResource Titulo}"
+                        FontSize="32"
+                        HorizontalOptions="Start"
+                        TextColor="#5639D5"
+                        Text="Estadia"/>
+                    
+                    <Label Style="{StaticResource Texto}"
+                        FontSize="24"
+                        HorizontalOptions="Start"
+                        TextColor="#111"
+                        Text="{Binding Estadia}"
+                           Margin="10, 0, 0, 0"/>
+
+                </StackLayout>
+            </Frame>
+
+            <Frame CornerRadius="20">
+                <StackLayout>
+                        <Label Style="{StaticResource Titulo}"
+                        FontSize="28"
+                        HorizontalOptions="Start"
+                        TextColor="#5639D5"
+                        Text="Valor da Hospedagem"/>
+
+                        <Label Style="{StaticResource Titulo}"
+                        FontSize="24"
+                        HorizontalOptions="Start"
+                        TextColor="#111"
+                        Text="{Binding ValorTotal, StringFormat='{}{0:c}' }"
+                           Margin="10, 0, 0, 0"/>
+                    </StackLayout>
+            </Frame>
+
+            <Button Style="{StaticResource CommonButton}"
+                    Text="Voltar"
+                    WidthRequest="250"
+                    HeightRequest="50"
+                    Clicked="Button_Clicked"/>
+
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
